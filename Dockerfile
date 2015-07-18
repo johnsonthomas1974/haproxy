@@ -8,3 +8,4 @@ COPY haproxy /etc/default/haproxy
 WORKDIR /etc/haproxy
 # Define default command.
 EXPOSE 80
+CMD ["/usr/sbin/haproxy","-db", "-f", "/etc/haproxy/haproxy.cfg"]
