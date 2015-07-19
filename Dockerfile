@@ -1,6 +1,6 @@
-FROM ubuntu:14.04
+FROM ubuntu:15.04
 RUN apt-get update -y
-RUN apt-get install haproxy
+RUN apt-get install haproxy -y
 #RUN apt-get install rsyslog
 COPY haproxy.cfg /etc/haproxy/haproxy.cfg
 COPY haproxy /etc/default/haproxy 
