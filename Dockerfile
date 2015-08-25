@@ -7,5 +7,5 @@ COPY haproxy /etc/default/haproxy
 #working directory.
 WORKDIR /etc/haproxy
 # Define default command.
-EXPOSE 80
+EXPOSE 443
 CMD ["/usr/sbin/haproxy","-db", "-f", "/etc/haproxy/haproxy.cfg"]
