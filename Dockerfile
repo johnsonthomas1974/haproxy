@@ -1,11 +1,11 @@
 FROM ubuntu:15.04
 RUN apt-get update -y
 RUN apt-get install haproxy -y
-#RUN apt-get install rsyslog
+RUN apt-get install git -y
 COPY haproxy.cfg /etc/haproxy/haproxy.cfg
-COPY haproxy /etc/default/haproxy 
-#working directory.
-WORKDIR /etc/haproxy
+COPY run_haproxy.sh /etc/haproxy/run_haproxy.sh
+COPY haproxy /etc/default/haproxy
 # Define default command.
-EXPOSE 443
-CMD ["/usr/sbin/haproxy","-db", "-f", "/etc/haproxy/haproxy.cfg"]
+EXPOSE 80
+CMD ["/etc/haproxy/run_haproxy.sh"]
+#WORKDIR /etc/haproxy
